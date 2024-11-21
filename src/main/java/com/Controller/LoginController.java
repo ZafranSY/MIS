@@ -31,10 +31,12 @@ public class LoginController extends HttpServlet {
                     request.getRequestDispatcher("adminPage.jsp").forward(request, response);
                     break;
                 case "coach":
-                    request.getRequestDispatcher("UserDashboard.jsp").forward(request, response);
+                	response.sendRedirect("UserDashboardController");
+
+//                    request.getRequestDispatcher("UserDashboard.jsp").forward(request, response);
                     break;
                 case "trainee":
-                    request.getRequestDispatcher("traineePage.jsp").forward(request, response);
+                    request.getRequestDispatcher("TraineePage.jsp").forward(request, response);
                     break;
                 default:
                     request.setAttribute("errorMessage", "Invalid username or password");
